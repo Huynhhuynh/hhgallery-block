@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import { gql } from 'graphql-request';
+import { gql } from 'graphql-request'
 
 export default {
   async asyncData({ $graphcms }) {
     const { posts } = await $graphcms.request(
       gql`
         {
-          posts {
+          posts(first: 5) {
             id
             slug
             title

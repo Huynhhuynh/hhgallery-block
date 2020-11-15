@@ -16,6 +16,12 @@
     "nuxt": "^2.14.6"
   },
   "devDependencies": {
+    "@nuxtjs/markdownit": "^1.2.10",
+    "github-markdown-css": "^4.0.0",
+    "highlight.js": "^10.3.2",
+    "markdown-it-attrs": "^3.0.3",
+    "markdown-it-div": "^1.1.0",
+    "markdown-it-style": "^1.0.0",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4",
     "vue-owl-carousel": "^2.0.3"

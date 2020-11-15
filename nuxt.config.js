@@ -15,7 +15,9 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/scss/theme.scss'
+    '~/assets/scss/theme.scss',
+    'github-markdown-css/github-markdown.css',
+		'highlight.js/styles/github.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -35,7 +37,30 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     '@nuxtjs/bulma',
+    '@nuxtjs/markdownit'
   ],
+
+  markdownit: {
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ],
+    highlight: function(str, lang) {
+			const hljs = require('highlight.js');
+			if (lang && hljs.getLanguage(lang)) {
+				try {
+				return '<pre class="hljs"><code>' +
+					hljs.highlight(lang, str, true).value +
+					'</code></pre>';
+				} catch (__) {}
+			}
+			return '<pre class="hljs"><code>' + hljs.highlight('plaintext', str, true).value + '</code></pre>'
+		}
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
