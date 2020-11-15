@@ -1,0 +1,25 @@
+#site-header {
+  padding: 30px 0;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .site-brand {
+    width: 180px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .site-nav {
+    margin-left: auto;
+  }
+}
+
+.site-nav {
+  margin-left: 20px;
+}
