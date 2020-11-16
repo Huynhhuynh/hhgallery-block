@@ -10,7 +10,9 @@
     </div>
     <div class="post-entry">
       <u v-if="post.excerpt" class="excerpt" >{{ post.excerpt }}</u>
-      <div v-html="$md.render( post.content.markdown )" class="markdown-body __content"></div>
+      <!-- {{ post }} -->
+      <!-- <div v-html="$md.render( post.content.markdown )" class="markdown-body __content"></div> -->
+      <div v-html="post.content.html" class="markdown-body __content"></div>
     </div>
   </article>
 </template>
@@ -39,7 +41,7 @@ export default {
           date
           tags
           content {
-            markdown
+            html
           }
         }
         }
