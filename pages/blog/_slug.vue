@@ -48,6 +48,15 @@ export default {
 
     return {
       post
+    }    
+  },
+  head () {
+    return {
+      title: `${this.post.title} | hhgallery blog`,
+      meta: [
+        { name: 'keywords', content: ( this.post.tags.length ) ? this.post.tags.join(', ') : '' },
+        { hid: 'description', name: 'description', content: this.post.excerpt }
+      ]
     }
   } 
 }

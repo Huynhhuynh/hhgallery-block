@@ -18,7 +18,7 @@ export default {
     const { posts } = await $graphcms.request(
       gql`
         {
-          posts(first: 5) {
+          posts(first: 4, orderBy: createdAt_DESC) {
             id
             slug
             title
